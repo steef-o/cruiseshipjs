@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Hvilken båt er det i dag</title>
+</head>
+<body class="bg-dark text-white">
+<header class="bg-secondary text-center p-3 mb-5">
+    <h1>Hvilken båt er det i dag?</h1>
+</header>
+
+<div class="container text-center">
+
+    <!-- søk etter skip -->
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <p class="lead" id="todaysDate"></p>
+            <input type="text" class="form-control form-control-lg" placeholder="Søk etter skip..."
+                   id="search" autofocus>
+            <ul class="mt-3" id="searchResult"></ul>
+            <h5 class="display-5 mb-5" id="todaysShipIntroduction"></h5>
+            <ul class="display-3 mb-5" id="todaysShip"></ul>
+
+        </div>
+
+    </div>
+
+    <ul id="shipList" ></ul>
+
+    <div id="shipDetail"></div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
