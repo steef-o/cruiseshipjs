@@ -9,13 +9,14 @@ let config = {
     storageBucket: "cruiseship2018-f5ba9.appspot.com",
     messagingSenderId: "406180801322"
 };
+
 firebase.initializeApp(config);
 const dbRef = firebase.database().ref();
 const shipRef = dbRef.child('ships');
 
 // Global variables
 const shipListUI = document.getElementById("shipList");
-const todayDateUI = document.getElementById("todaysDate");
+const todaysDateUI = document.getElementById("todaysDate");
 const todaysShipUI = document.getElementById("todaysShip");
 const todaysShipIntroductionUI = document.getElementById("todaysShipIntroduction");
 const searchResultUI = document.getElementById("searchResult");
@@ -26,7 +27,7 @@ let numberOfShips = 0;
 
 
 function init() {
-    todayDateUI.innerHTML = getTodaysDate();
+    todaysDateUI.innerHTML = getTodaysDate();
     searchUI.addEventListener('input', matchWithSearch);
     getTodaysShips();
 
@@ -41,7 +42,6 @@ function init() {
         li.addEventListener("click", shipClicked);
         shipListUI.append(li);
         */
-
 
     });
 }
@@ -96,7 +96,7 @@ function init() {
         shipResultArray.map((ship) =>{
             if(ship.nameShip.toUpperCase() === searchUI.value.toUpperCase()){
                     let li = document.createElement("li");
-                    li.innerHTML = `Skipet ${ship.nameShip} kommer til Eidfjord den ${ship.date} har ${ship.maxPassengers} passasjerer med ${ship.nasjonality} nasjonalitet.
+                    li.innerHTML = `Skipet ${ship.nameShip} kommer til Eidfjord den ${ship.date} har ${ship .maxPassengers} passasjerer med ${ship.nasjonality} nasjonalitet.
                     Skipet blir liggende i Eidfjord i tidsrommet ${ship.anchorTime}`;
                     searchResultUI.append(li);
                     li.className="mb-3";
